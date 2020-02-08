@@ -212,7 +212,7 @@ hello.reset()
 hello.ht()
 
 def drawGhost(box, positionx, positiony):
-  print("draw ghost:")
+  print("draw ghost: 1234")
   print(positionx, positiony)
   box.ht()
   box.goto(positionx+22, positiony-22)
