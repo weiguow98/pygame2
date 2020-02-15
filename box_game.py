@@ -432,6 +432,20 @@ def right():
     playerx += 1
     drawplayer()
 
+secondcount = 0
+timeclock = turtle.Turtle()
+timeclock.goto(200,250)
+timeclock.pencolor("#009900")
+
+def drawtime():
+  global secondcount 
+  if( haswon == 0):
+    secondcount = secondcount + 1
+    print("time spent: " + str(secondcount))
+    timeclock.clear()
+    timeclock.write(str(secondcount), False, align="left", font=("Arial",20,))
+    window.ontimer(drawtime, 1000)
+  
 window.onkey(up, "Up")
 window.onkey(up, "W")
 window.onkey(down, "Down")
@@ -440,6 +454,7 @@ window.onkey(left, "Left")
 window.onkey(left, "A")
 window.onkey(right, "Right")
 window.onkey(right, "D")
+drawtime()
 
 window.listen()
 window.mainloop()
